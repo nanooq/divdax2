@@ -2,6 +2,10 @@ package layer2;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Set;
+
+import layer3.MyMap;
+import layer3.Stock;
 
 public class CSV implements CSVable {
 	
@@ -17,6 +21,20 @@ public class CSV implements CSVable {
 		this.setLines(new ArrayList<String[]>());
 	}
 	
+	public static CSV from(File inFile, ArrayList<MyMap> inRows) {
+		Set<Stock> stocks = inRows.get(0).keySet();
+		for(MyMap aRow : inRows) {
+			Set<Stock> otherStocks = aRow.keySet();
+			for ( Stock anotherStock : otherStocks) {
+				if (stocks.contains(otherStocks)){
+					stocks.add(anotherStock);
+				}				
+			}
+		}
+		String[] strings = (String[]) stocks.toArray();
+		return new CSV(inFile, strings);
+	}
+
 	public boolean add(String aLine, String inRegex) {
 		return this.getLines().add(aLine.split(inRegex));		
 	}

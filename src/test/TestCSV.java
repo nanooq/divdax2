@@ -10,7 +10,7 @@ import layer2.Layer2;
 
 import org.junit.Test;
 
-public class TestIO_CSV {
+public class TestCSV {
 	
 	@Test
 	public void testHeader() throws IOException{
