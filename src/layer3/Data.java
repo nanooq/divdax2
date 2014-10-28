@@ -2,6 +2,11 @@ package layer3;
 
 public class Data {
 	
+	public enum DT {
+		STR, STRX, FLT, DATE
+	}
+
+	
 	private DT type = null;
 	private String value = null;
 

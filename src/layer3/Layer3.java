@@ -1,6 +1,7 @@
 package layer3;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -41,10 +42,19 @@ public class Layer3 {
 		Document readDocument = null;
 		if (Layer2.exists(inFile)) {
 			readDocument = Layer2.parse(inFile, inStrBaseURI);
+		} else {
+			throw new FileNotFoundException();
 		}
 		return readDocument;
 	}
-
+	
+	/**
+	 * Read URL from inStrURL and write to file
+	 * @param inStrURL
+	 * @param inFile
+	 * @return
+	 * @throws IOException
+	 */
 	public static Document readDocument(String inStrURL, File inFile) throws IOException {
 		Document readDocument = null;
 		readDocument = Layer2.read(inStrURL);

@@ -3,6 +3,8 @@ package layer3;
 import java.util.HashMap;
 import java.util.Set;
 
+import layer3.Data.DT;
+
 public class MyMap {
 	
 	private HashMap<Stock, Data> aMap = null;
@@ -60,5 +62,14 @@ public class MyMap {
 
 	public Set<Stock> keySet() {
 		return this.aMap.keySet();
+	}
+
+	public Data get(Stock inStock) {
+		return this.getMap().get(inStock);
+	}
+
+	public Data get(String aKey) {
+		Stock aStock = Stock.valueOf(aKey);
+		return this.get(aStock);
 	}
 }

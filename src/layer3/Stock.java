@@ -1,6 +1,31 @@
 package layer3;
 
 public enum Stock {
-	name, price, yield, dividend13, yield13, dividend14, yield14, trend, dividendExpected, yieldExpected, asmExpected, information
+	name("name"), 
+	price("price"),
+	yield("yield"),
+	dividend13("dividend"),
+	yield13("yield13"), 
+	dividend14("dividend14"), 
+	yield14("yield14"), 
+	trend("trend"),
+	dividendExpected("dividendExpected"),
+	yieldExpected("yieldExpected"),
+	asmExpected("asmExpected"),
+	information("information");
 
+	private Stock(String inString) {
+		this.setString(inString);
+	}
+	
+	private String aString = null;
+	
+	private String setString(String inString) {
+		this.aString = inString;
+		return getString();
+	}
+	
+	private String getString() {
+		return aString;
+	}
 }
