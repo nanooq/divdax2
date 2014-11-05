@@ -144,4 +144,9 @@ public class CSV implements CSVable {
 		aSB.append(CSV.NL);
 		return aSB.toString();
 	}
+	
+	@Override
+	public String toString() {
+		return this.getContent().trim();
+	}
 }

@@ -15,8 +15,8 @@ import org.jsoup.nodes.Document;
 
 public class Layer3 {
 	
-	private static final String ddMMyyyy = "dd.MM.yyyy";
-	private static final String yyyyMMdd = "yyyy-MM-dd";
+	public static final String ddMMyyyy = "dd.MM.yyyy";
+	public static final String yyyyMMdd = "yyyy-MM-dd";
 	
 	public static String download(String inStrURL, File inFile) throws IOException {
 		Document aDoc = Layer2.read(inStrURL);
@@ -31,6 +31,19 @@ public class Layer3 {
 		return new SimpleDateFormat(inPattern).format(inDate);
 	}
 
+	public static String formatDate(String inValue, String inPatternIn, 
+			String inPatternOut) {
+		String formattedString = "";
+		try{
+			formattedString = new SimpleDateFormat(inPatternOut).format(
+					new SimpleDateFormat(inPatternIn).parse(inValue))
+					.toString();			
+		} catch (ParseException e) {
+			formattedString  = inValue;
+		}
+		return formattedString;
+	}
+	
 	/**
 	 * Read file and return Jsoup.Document
 	 * @param inFile
@@ -47,7 +60,7 @@ public class Layer3 {
 		}
 		return readDocument;
 	}
-	
+
 	/**
 	 * Read URL from inStrURL and write to file
 	 * @param inStrURL
@@ -65,7 +78,7 @@ public class Layer3 {
 	public static String stampToday() {
 		return Layer3.formatDate(new Date(), Layer3.yyyyMMdd);
 	}
-
+	
 	public static Date toDate(String inString) {	
 		 Date d1 = null;
 		try {
@@ -77,8 +90,22 @@ public class Layer3 {
 		return d1;
 	}
 
+	public static Date toDateyyyyMMdd(String inString) {	
+		 Date d1 = null;
+		try {
+			SimpleDateFormat formatter=new SimpleDateFormat(Layer3.yyyyMMdd);
+	        d1 = formatter.parse(inString);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return d1;
+	}
+
+	public static String write(CSV inCSV) throws IOException {
+		return Layer2.write(inCSV);		
+	}
+
 	public static String write(File inFile, ArrayList<MyMap> inRows) throws IOException {
-		CSV aCSV = CSV.from(inFile, inRows);
-		return Layer2.write(aCSV);
+		return Layer3.write(CSV.from(inFile, inRows));
 	}
 }

@@ -28,7 +28,7 @@ public class Data {
 			switch (inDT) {
 			case STRX : inValue = inValue.replaceAll("[^a-zA-Z0-9 :.,]", "");
 				break;
-			case DATE : inValue = Layer3.formatDate(Layer3.toDate(inValue));
+			case DATE : inValue = Layer3.formatDate(inValue, Layer3.ddMMyyyy, Layer3.yyyyMMdd);
 				break;
 			default:
 				break;
