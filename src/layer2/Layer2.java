@@ -11,6 +11,7 @@ import org.jsoup.nodes.Document;
 public class Layer2 {
 	
 	private static Charset CHARSET = Charset.forName("UTF-8");
+	private static String ONLINE = "http://www.dividendenchecker.de";
 	
 	public static boolean delete(CSVable inCSVable) {
 		return inCSVable.getFile().delete();
@@ -65,5 +66,15 @@ public class Layer2 {
 
 	public static Document parse(File inFile, String inBaseURI) throws IOException {
 		return Jsoup.parse(inFile, Layer2.CHARSET.toString(), inBaseURI);
+	}
+	
+	public static boolean isOnline() {
+		boolean isOnline = true;
+		try {
+			Jsoup.connect(Layer2.ONLINE).timeout(2000).get();		
+		} catch (IOException e){
+			isOnline = false;
+		}
+		return isOnline;
 	}
 }

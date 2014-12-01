@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Set;
 
 import layer3.Data;
-import layer3.MyMap;
-import layer3.Stock;
+import layer3.StockMap;
+import layer3.StockAttribute;
 
 public class CSV implements CSVable {
 	
@@ -22,16 +22,16 @@ public class CSV implements CSVable {
 		this.setLines(new ArrayList<String[]>());
 	}
 	
-	public CSV(File inFile, ArrayList<MyMap> inMap) {
+	public CSV(File inFile, ArrayList<StockMap> inMap) {
 		this.setFile(inFile);
 		this.setHeader(inMap);
 		this.setLines(new ArrayList<String[]>(), inMap);
 	}
 
-	private ArrayList<String[]> setLines(ArrayList<String[]> inLines, ArrayList<MyMap> inMap) {
+	private ArrayList<String[]> setLines(ArrayList<String[]> inLines, ArrayList<StockMap> inMap) {
 		this.setLines(new ArrayList<String[]>());
 		if (inLines.isEmpty()){
-			for (MyMap aRow : inMap) {
+			for (StockMap aRow : inMap) {
 				this.add(aRow);
 			}			
 		} else {
@@ -40,14 +40,14 @@ public class CSV implements CSVable {
 		return this.getLines();
 	}
 
-	private String[] setHeader(ArrayList<MyMap> inMap) {
+	private String[] setHeader(ArrayList<StockMap> inMap) {
 		String[] header = null;
 		if (inMap.isEmpty()) {
 			throw new RuntimeException("wat?");
 		} else {
-			Set<Stock> keys = inMap.get(0).keySet();
+			Set<StockAttribute> keys = inMap.get(0).keySet();
 			ArrayList<String> strings = new ArrayList<String>();
-			for (Stock aStock : keys) {
+			for (StockAttribute aStock : keys) {
 				strings.add(aStock.toString());
 			}
 			String[] dummy = new String[0];
@@ -56,11 +56,11 @@ public class CSV implements CSVable {
 		return this.setHeader(header);
 	}
 
-	public static CSV from(File inFile, ArrayList<MyMap> inRows) {
-		Set<Stock> stocks = inRows.get(0).keySet();
-		for(MyMap aRow : inRows) {
-			Set<Stock> otherStocks = aRow.keySet();
-			for ( Stock anotherStock : otherStocks) {
+	public static CSV from(File inFile, ArrayList<StockMap> inRows) {
+		Set<StockAttribute> stocks = inRows.get(0).keySet();
+		for(StockMap aRow : inRows) {
+			Set<StockAttribute> otherStocks = aRow.keySet();
+			for ( StockAttribute anotherStock : otherStocks) {
 				if (stocks.contains(otherStocks)){
 					stocks.add(anotherStock);
 				}				
@@ -68,17 +68,17 @@ public class CSV implements CSVable {
 		}
 		String[] strings = (String[]) stocks.toArray();
 		CSV newCSV = new CSV(inFile, strings);
-		for (MyMap aRow : inRows) {
+		for (StockMap aRow : inRows) {
 			newCSV.add(aRow);			
 		}
 		return newCSV;
 	}
 
-	private boolean add(MyMap aRow) {
+	private boolean add(StockMap aRow) {
 		ArrayList<String> strDatas = new ArrayList<String>();
 		Data aData = null;
 		for (String aColumn : this.getHeader()) {
-			aData = aRow.get(Stock.valueOf(aColumn));
+			aData = aRow.get(StockAttribute.valueOf(aColumn));
 			strDatas.add(aData.toString());
 		} 
 		String[] arrString = new String[this.getHeader().length];

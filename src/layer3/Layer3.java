@@ -105,7 +105,7 @@ public class Layer3 {
 		return Layer2.write(inCSV);		
 	}
 
-	public static String write(File inFile, ArrayList<MyMap> inRows) throws IOException {
+	public static String write(File inFile, ArrayList<StockMap> inRows) throws IOException {
 		return Layer3.write(CSV.from(inFile, inRows));
 	}
 }

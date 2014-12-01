@@ -5,19 +5,19 @@ import java.util.Set;
 
 import layer3.Data.DT;
 
-public class MyMap {
+public class StockMap {
 	
-	private HashMap<Stock, Data> aMap = null;
+	private HashMap<StockAttribute, Data> aMap = null;
 	
-	public MyMap() {
-		this.setMap(new HashMap<Stock, Data>());
+	public StockMap() {
+		this.setMap(new HashMap<StockAttribute, Data>());
 	}
 
-	private HashMap<Stock, Data> getMap() {
+	private HashMap<StockAttribute, Data> getMap() {
 		return this.aMap;
 	}
 
-	public Data put(DT inDT, Stock inStock, String inValue) {
+	public Data put(DT inDT, StockAttribute inStock, String inValue) {
 		Data newData = null;
 		try {
 			newData = new Data(inDT, inValue);
@@ -28,11 +28,11 @@ public class MyMap {
 		return newData;
 	}
 	
-	private Data put(Stock inStock, Data inData){
+	private Data put(StockAttribute inStock, Data inData){
 		return this.getMap().put(inStock, inData);
 	}
 	
-	private HashMap<Stock, Data> setMap(HashMap<Stock, Data> inMap) {
+	private HashMap<StockAttribute, Data> setMap(HashMap<StockAttribute, Data> inMap) {
 		this.aMap = inMap;
 		return this.getMap();
 	}
@@ -42,8 +42,8 @@ public class MyMap {
 		StringBuilder aSB = new StringBuilder();
 		aSB.append("{");
 		String prefix = "";
-		Set<Stock> keys = this.getMap().keySet();
-		for ( Stock aStock : keys ) {
+		Set<StockAttribute> keys = this.getMap().keySet();
+		for ( StockAttribute aStock : keys ) {
 			aSB.append(prefix);
 			prefix = ", ";
 			aSB.append(aStock + " = " + this.getMap().get(aStock));
@@ -52,7 +52,7 @@ public class MyMap {
 		return aSB.toString();
 	}
 
-	public Data put(Stock inStock, String inValue) {
+	public Data put(StockAttribute inStock, String inValue) {
 		return this.put(DT.STR, inStock, inValue);
 	}
 
@@ -60,16 +60,16 @@ public class MyMap {
 		return this.getMap().isEmpty();
 	}
 
-	public Set<Stock> keySet() {
+	public Set<StockAttribute> keySet() {
 		return this.aMap.keySet();
 	}
 
-	public Data get(Stock inStock) {
+	public Data get(StockAttribute inStock) {
 		return this.getMap().get(inStock);
 	}
 
 	public Data get(String aKey) {
-		Stock aStock = Stock.valueOf(aKey);
+		StockAttribute aStock = StockAttribute.valueOf(aKey);
 		return this.get(aStock);
 	}
 }

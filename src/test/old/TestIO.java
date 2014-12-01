@@ -1,4 +1,4 @@
-package test;
+package test.old;
 
 import static org.junit.Assert.*;
 
@@ -6,10 +6,40 @@ import java.io.File;
 import java.io.IOException;
 
 import layer2.Layer2;
+import layer3.Layer3;
 
+import org.jsoup.nodes.Document;
 import org.junit.Test;
 
 public class TestIO {
+	
+	@Test
+	public void testReadFromFile() {
+		File folder = new File("/home/lora/Sync/divdax2_data");
+		File readFile = null;
+		for (File aFile : folder.listFiles()) {
+			if (aFile.isFile() &&
+					aFile.getName().contains(".html")) {
+				readFile = aFile;
+				break;
+			}
+		}
+		assertNotNull(readFile);
+		try {
+			Document readDoc = Layer3.readDocument(readFile, "dummy");
+//			System.out.println(readDoc.toString());
+		} catch (IOException e) {
+			fail(e.getMessage());
+		}
+	}
+	
+	@Test
+	public void testListFilesInFolder() {
+		File folder = new File("/home/lora/");
+	    for (File aFile : folder.listFiles()) {
+	    	assertTrue(aFile.isFile());
+	    	}
+	}
 	
 	@Test
 	public void testRead(){

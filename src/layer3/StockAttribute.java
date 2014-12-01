@@ -1,6 +1,6 @@
 package layer3;
 
-public enum Stock {
+public enum StockAttribute {
 	name("name"), 
 	price("price"),
 	yield("yield"),
@@ -14,7 +14,7 @@ public enum Stock {
 	asmExpected("asmExpected"),
 	information("information");
 
-	private Stock(String inString) {
+	private StockAttribute(String inString) {
 		this.setString(inString);
 	}
 	
