@@ -3,7 +3,7 @@ package layer3;
 public class Data {
 	
 	public enum DT {
-		STR, STRX, FLT, DATE
+		AN, STR, STRX, FLT, DATE
 	}
 
 	
@@ -16,16 +16,19 @@ public class Data {
 	
 	public Data(DT inDT, String inValue) {
 		this.setDataType(inDT);
-		this.setValue(this.checkValue(inDT, inValue));
+		this.setValue(this.formatValue(inDT, inValue));
 	}
 	
-	private String checkValue(DT inDT, String inValue) {
+	public String formatValue(DT inDT, String inValue) {
 		if (inValue == null
 				|| inValue.isEmpty()) {
 			inValue = "";
 			throw new NullPointerException();
 		} else {
 			switch (inDT) {
+			// Alphanumeric
+			case AN : inValue = inValue.replaceAll("[^a-zA-Z0-9]", "");
+			// Alphanumeric and ; . ,
 			case STRX : inValue = inValue.replaceAll("[^a-zA-Z0-9 :.,]", "");
 				break;
 			case DATE : inValue = Layer3.formatDate(inValue, Layer3.ddMMyyyy, Layer3.yyyyMMdd);
@@ -42,7 +45,7 @@ public class Data {
 		return this.getDataType();
 	}
 
-	private DT getDataType() {
+	public DT getDataType() {
 		return this.type;
 	}
 
@@ -51,12 +54,24 @@ public class Data {
 		return this.getValue();
 	}
 	
-	private String getValue() {
+	public String getValue() {
 		return this.value;
 	}
 	
 	@Override
 	public String toString() {
 		return this.value;
+	}
+
+	public boolean isString() {
+		boolean isString = false;
+		if ( 
+				this.getDataType().equals(DT.AN) ||
+				this.getDataType().equals(DT.STR) ||
+				this.getDataType().equals(DT.STRX)) 
+		{
+			isString = true;
+		}
+		return isString;
 	}
 }

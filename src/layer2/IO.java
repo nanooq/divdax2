@@ -8,6 +8,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -55,5 +56,18 @@ public class IO {
 			throw e;
 		}
 		return aSB.toString();
+	}
+	
+	public static ArrayList<String> read_(Path inPath, Charset inCharset) throws IOException {
+		ArrayList<String> lines = new ArrayList<String>();
+		try (BufferedReader reader = Files.newBufferedReader(inPath, inCharset)) {
+		    String line = null;
+		    while ((line = reader.readLine()) != null) {
+		    	lines.add(line);
+		    }
+		} catch (IOException e) {
+			throw e;
+		}
+		return lines;
 	}
 }

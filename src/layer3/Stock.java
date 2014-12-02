@@ -1,15 +1,23 @@
 package layer3;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
+import layer2.CSV;
 import layer3.Data.DT;
 
-public class StockMap {
+/**
+ * This class represents a stock.
+ * 
+ * @author lora
+ *
+ */
+public class Stock {
 	
 	private HashMap<StockAttribute, Data> aMap = null;
 	
-	public StockMap() {
+	public Stock() {
 		this.setMap(new HashMap<StockAttribute, Data>());
 	}
 
@@ -17,17 +25,20 @@ public class StockMap {
 		return this.aMap;
 	}
 
-	public Data put(DT inDT, StockAttribute inStock, String inValue) {
+	public Data put(DT inDT, StockAttribute inStockAttribute, String inValue) {
 		Data newData = null;
-		try {
-			newData = new Data(inDT, inValue);
-			this.put(inStock, new Data(inDT, inValue));
-		} catch (NullPointerException e) {
-			;
+		newData = new Data(inDT, inValue);
+		this.put(inStockAttribute, new Data(inDT, inValue));
+		if (inStockAttribute == StockAttribute.isin) {
+			this.put(StockAttribute.strFile, this.createFilename(inValue));
 		}
 		return newData;
 	}
 	
+	private Data createFilename(String inValue) {
+		return new Data(DT.STR, inValue + "." + CSV.FILETYPE);
+	}
+
 	private Data put(StockAttribute inStock, Data inData){
 		return this.getMap().put(inStock, inData);
 	}
@@ -71,5 +82,15 @@ public class StockMap {
 	public Data get(String aKey) {
 		StockAttribute aStock = StockAttribute.valueOf(aKey);
 		return this.get(aStock);
+	}
+
+	public static Stock createFrom(ArrayList<String> inCSVStrings) {
+		//TODO
+		return null;
+	}
+
+	public boolean update(Stock inStock) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

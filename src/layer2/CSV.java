@@ -5,13 +5,14 @@ import java.util.ArrayList;
 import java.util.Set;
 
 import layer3.Data;
-import layer3.StockMap;
+import layer3.Stock;
 import layer3.StockAttribute;
 
 public class CSV implements CSVable {
 	
 	public static final String NL = System.lineSeparator();
 	public static final String REGEX = ",";
+	public static final String FILETYPE = "csv";
 	private File aFile = null;
 	private String[] aHeader = null;
 	private ArrayList<String[]> lines = null;
@@ -22,16 +23,16 @@ public class CSV implements CSVable {
 		this.setLines(new ArrayList<String[]>());
 	}
 	
-	public CSV(File inFile, ArrayList<StockMap> inMap) {
+	public CSV(File inFile, ArrayList<Stock> inMap) {
 		this.setFile(inFile);
 		this.setHeader(inMap);
 		this.setLines(new ArrayList<String[]>(), inMap);
 	}
 
-	private ArrayList<String[]> setLines(ArrayList<String[]> inLines, ArrayList<StockMap> inMap) {
+	private ArrayList<String[]> setLines(ArrayList<String[]> inLines, ArrayList<Stock> inMap) {
 		this.setLines(new ArrayList<String[]>());
 		if (inLines.isEmpty()){
-			for (StockMap aRow : inMap) {
+			for (Stock aRow : inMap) {
 				this.add(aRow);
 			}			
 		} else {
@@ -40,7 +41,7 @@ public class CSV implements CSVable {
 		return this.getLines();
 	}
 
-	private String[] setHeader(ArrayList<StockMap> inMap) {
+	private String[] setHeader(ArrayList<Stock> inMap) {
 		String[] header = null;
 		if (inMap.isEmpty()) {
 			throw new RuntimeException("wat?");
@@ -56,9 +57,9 @@ public class CSV implements CSVable {
 		return this.setHeader(header);
 	}
 
-	public static CSV from(File inFile, ArrayList<StockMap> inRows) {
+	public static CSV from(File inFile, ArrayList<Stock> inRows) {
 		Set<StockAttribute> stocks = inRows.get(0).keySet();
-		for(StockMap aRow : inRows) {
+		for(Stock aRow : inRows) {
 			Set<StockAttribute> otherStocks = aRow.keySet();
 			for ( StockAttribute anotherStock : otherStocks) {
 				if (stocks.contains(otherStocks)){
@@ -68,13 +69,13 @@ public class CSV implements CSVable {
 		}
 		String[] strings = (String[]) stocks.toArray();
 		CSV newCSV = new CSV(inFile, strings);
-		for (StockMap aRow : inRows) {
+		for (Stock aRow : inRows) {
 			newCSV.add(aRow);			
 		}
 		return newCSV;
 	}
 
-	private boolean add(StockMap aRow) {
+	private boolean add(Stock aRow) {
 		ArrayList<String> strDatas = new ArrayList<String>();
 		Data aData = null;
 		for (String aColumn : this.getHeader()) {

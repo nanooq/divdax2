@@ -71,7 +71,7 @@ public class Layer3 {
 	public static Document readDocument(String inStrURL, File inFile) throws IOException {
 		Document readDocument = null;
 		readDocument = Layer2.read(inStrURL);
-		Layer2.write(inFile, readDocument);
+		System.out.println(Layer2.write(inFile, readDocument));
 		return readDocument;
 	}
 
@@ -105,7 +105,11 @@ public class Layer3 {
 		return Layer2.write(inCSV);		
 	}
 
-	public static String write(File inFile, ArrayList<StockMap> inRows) throws IOException {
+	public static String write(File inFile, ArrayList<Stock> inRows) throws IOException {
 		return Layer3.write(CSV.from(inFile, inRows));
+	}
+
+	public static ArrayList<String> readCSV(String inStrFileStock) throws IOException {
+		return Layer2.read_(new File(inStrFileStock));
 	}
 }

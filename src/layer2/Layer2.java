@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -31,6 +32,10 @@ public class Layer2 {
 	
 	public static String read(File inFile) throws IOException {
 		return IO.read(inFile.toPath(), CHARSET).trim();
+	}
+	
+	public static ArrayList<String> read_(File inFile) throws IOException {
+		return IO.read_(inFile.toPath(), CHARSET);
 	}
 	
 	public static Document read(String inStrURL) throws IOException {

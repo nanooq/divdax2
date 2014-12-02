@@ -22,12 +22,12 @@ public class Sources_DivChe {
 		return sources;
 	}
 	
-	public static ArrayList<StockMap> extractData(Document inDocument) {
-		ArrayList<StockMap> rows = new ArrayList<StockMap>();
+	public static ArrayList<Stock> extractStocks(Document inDocument) {
+		ArrayList<Stock> rows = new ArrayList<Stock>();
 		Element aTable = inDocument.getElementById("table-dax");
 		Elements tableRows = aTable.getElementsByTag("tr");
 		for (Element aRow : tableRows) {
-			StockMap myMap = new StockMap();
+			Stock myMap = new Stock();
 			Elements rowDatas = aRow.getElementsByTag("td");
 			Elements data = null;
 			if (!rowDatas.isEmpty()) {

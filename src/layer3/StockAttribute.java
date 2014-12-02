@@ -1,6 +1,7 @@
 package layer3;
 
 public enum StockAttribute {
+	isin("isin"),
 	name("name"), 
 	price("price"),
 	yield("yield"),
@@ -12,20 +13,21 @@ public enum StockAttribute {
 	dividendExpected("dividendExpected"),
 	yieldExpected("yieldExpected"),
 	asmExpected("asmExpected"),
-	information("information");
+	information("information"), 
+	strFile("strFile");
 
+	private String aString = null;
+	
 	private StockAttribute(String inString) {
 		this.setString(inString);
 	}
 	
-	private String aString = null;
+	private String getString() {
+		return aString;
+	}
 	
 	private String setString(String inString) {
 		this.aString = inString;
 		return getString();
-	}
-	
-	private String getString() {
-		return aString;
 	}
 }
