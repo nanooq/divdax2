@@ -1,0 +1,638 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>Dividendenchecker - Dividende DAX Unternehmen | Dividendenrendite 2014</title> 
+  <meta name="description" content="Aktuelle Dividenden 2014 und Dividendenrendite aller DAX Unternehmen im Vergleich zum Vorjahr sowie erwartende Dividende und Hauptversammlung." /> 
+  <meta name="keywords" content="Dividende, erwartete Dividende, Dividendenrendite, DAX, Dividende DAX, Dividenden DAX, Dividende 2013, Dividende 2014, Hauptversammlung" /> 
+  <meta name="author" content="Dividendenchecker" /> 
+  <meta http-equiv="expires" content="0" /> 
+  <meta http-equiv="language" content="de" /> 
+  <meta http-equiv="content-language" content="de" /> 
+  <meta name="language" content="deutsch, de" /> 
+  <meta name="pragma" content="no-cache" /> 
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" /> 
+  <link href="http://fonts.googleapis.com/css?family=Arimo:700" rel="stylesheet" type="text/css" /> 
+  <link href="css/styles.css" rel="stylesheet" type="text/css" /> 
+  <link rel="stylesheet" type="text/css" href="css/tooltipster.css" /> 
+  <link rel="shortcut icon" href="http://www.dividendenchecker.de/css/graphics/favicon.ico" type="image/x-icon" /> 
+  <link rel="icon" href="http://www.dividendenchecker.de/css/graphics/favicon.ico" type="image/x-icon" /> 
+  <link rel="alternate" hreflang="de-AT" href="http://www.dividendenchecker.at/dividende_dax.php" /> 
+  <link rel="alternate" hreflang="en" href="http://www.dividendenchecker.com/dividend-dax.php" /> 
+  <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script> 
+  <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script> 
+  <script type="text/javascript" src="js/jquery.tablesorter.js"></script> 
+  <script>
+	$(document).ready(function()
+	{         
+    	$("#table-dax").tablesorter({widgets: ['zebra']});  
+		$('.tooltip').tooltipster({position: 'top-right'});
+     }	
+); 
+</script> 
+ </head> 
+ <body> 
+  <div class="main"> 
+   <div class="topbar"> 
+    <div class="main_size"> 
+     <div class="topbar_content"> 
+      <div class="col col-3-1-2">
+       01.12.2014 23:05
+      </div>
+      <div class="col col-3-2-2">
+       DAX 9963.51 -17.34 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="headertop"> 
+    <div class="main_size"> 
+     <div class="col col-4-1-2"> 
+      <a href="/index.php"><img src="/css/graphics/logo_dividendenchecker.png" border="0" alt="Dividendenchecker" /></a> 
+     </div> 
+     <div class="col col-4-2-2"> 
+      <div class="col c1"> 
+       <p>News</p> 
+       <ul> 
+        <li><a href="/news.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> 2014</a></li> 
+        <li><a href="/news_2013.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> 2013</a></li> 
+        <li><a href="/news_2012.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> 2012</a></li> 
+        <li><a href="/news_2011.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> 2011</a></li> 
+        <li><a href="/news_2010.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> 2010</a></li> 
+        <li><a href="/news_2009.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> 2009</a></li> 
+       </ul> 
+      </div> 
+      <div class="col c2"> 
+       <p> Deutschland</p> 
+       <ul> 
+        <li><a href="/dividende_dax.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> DAX</a></li> 
+        <li><a href="/dividende_mdax.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> MDAX</a></li> 
+        <li><a href="/dividende_sdax.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> SDAX</a></li> 
+        <li><a href="/dividende_tecdax.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> TecDAX</a></li> 
+        <li><a href="/dividende_okodax.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> &Ouml;koDAX</a></li> 
+       </ul> 
+      </div> 
+      <div class="col c3"> 
+       <p> International</p> 
+       <ul> 
+        <li><a href="/dividende_atx.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> ATX</a></li> 
+        <li><a href="/dividende_smi.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> SMI</a></li> 
+       </ul> 
+      </div> 
+      <div class="col c4"> 
+       <p> Informationen</p> 
+       <ul> 
+        <li><a href="/top-erendite.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> Top eRendite</a></li> 
+        <li><a href="/perlen.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> Dividenden Perlen</a></li> 
+        <li><a href="/dividende.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> Was ist eine Dividende?</a></li> 
+        <li><a href="/hv-kalender.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> HV Kalender 2014/2015</a></li> 
+        <li><a href="/dividende_dax_ausschuettung.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> DAX Aussch&uuml;ttung</a></li> 
+        <li><a href="/dividende-branchen.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> Branchen</a></li> 
+       </ul> 
+      </div> 
+      <div class="col c5"> 
+       <p> Multimedia</p> 
+       <ul> 
+        <li><a href="/chart-collection.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> Chart Collection</a></li> 
+        <li><a href="/chill_out_area.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> Chill out area</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="content"> 
+    <div class="main_size"> 
+     <div class="col col-2-1-2"> 
+      <h1>DAX - Deutscher Aktienindex</h1> Letzte und zu erwartende Dividende der aktuellen DAX Unternehmen.
+      <br /> 
+      <br /> 
+      <script type="text/javascript">
+google_ad_client = "ca-pub-2189911327907144";
+/* Dividendenchecker - Banner */
+google_ad_slot = "8725900540";
+google_ad_width = 728;
+google_ad_height = 90;
+
+</script> 
+      <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+      <br /> 
+      <br /> Kurse werden verz&ouml;gert dargestellt.
+      <br /> Sortierfunktion kann &uuml;ber die Spalten&uuml;berschriften aktiviert werden.
+      <br /> 
+      <a href="#Legende"><img src="css/graphics/link.png" border="0" alt="Link" /> zur Legende</a> 
+      <table id="table-dax" class="tablesorter">
+       <thead>
+        <tr> 
+         <th width="229">Titel</th> 
+         <th width="50">Kurs</th> 
+         <th width="50">Ren</th>
+         <th width="70">Div13</th>
+         <th width="50">Ren13</th>
+         <th width="70">Div14</th> 
+         <th width="50">Ren14</th>
+         <th width="65">Tendenz</th>
+         <th width="50">eDiv</th> 
+         <th width="50">eRen</th>
+         <th width="70">eHV</th>
+         <th width="40">Info</th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr> 
+         <td><a href="http://www.adidas-group.de/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> adidas AG</a></td>
+         <td align="right">64.50</td>
+         <td align="right">2.33%</td>
+         <td align="right">1.35</td>
+         <td align="right">1.59%</td>
+         <td align="right">1.50</td>
+         <td align="right">1.92%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">07.05.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.allianz.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Allianz SE</a></td>
+         <td align="right">138.45</td>
+         <td align="right">3.83%</td>
+         <td align="right">4.50</td>
+         <td align="right">3.73%</td>
+         <td align="right">5.30</td>
+         <td align="right">4.23%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">06.05.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.basf.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> BASF SE</a></td>
+         <td align="right">73.01</td>
+         <td align="right">3.70%</td>
+         <td align="right">2.60</td>
+         <td align="right">3.58%</td>
+         <td align="right">2.70</td>
+         <td align="right">3.21%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">30.04.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.bayer.de/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> BAYER AG</a></td>
+         <td align="right">120.95</td>
+         <td align="right">1.74%</td>
+         <td align="right">1.90</td>
+         <td align="right">2.34%</td>
+         <td align="right">2.10</td>
+         <td align="right">2.07%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">27.05.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.beiersdorf.de/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Beiersdorf AG</a></td>
+         <td align="right">71.58</td>
+         <td align="right">0.98%</td>
+         <td align="right">0.70</td>
+         <td align="right">1.03%</td>
+         <td align="right">0.70</td>
+         <td align="right">0.99%</td>
+         <td align="center"><img src="css/graphics/equal.png" border="0" alt="equal" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">31.03.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.bmwgroup.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> BMW AG St</a></td>
+         <td align="right">91.95</td>
+         <td align="right">2.83%</td>
+         <td align="right">2.50</td>
+         <td align="right">3.41%</td>
+         <td align="right">2.60</td>
+         <td align="right">2.95%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">13.05.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.commerzbank.de/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Commerzbank AG</a></td>
+         <td align="right">12.30</td>
+         <td align="right">0.00%</td>
+         <td align="right">0.00</td>
+         <td align="right">0.00%</td>
+         <td align="right">0.00</td>
+         <td align="right">0.00%</td>
+         <td align="center"><img src="css/graphics/no.png" border="0" alt="no" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">30.04.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.conti-online.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Continental AG</a></td>
+         <td align="right">169.20</td>
+         <td align="right">1.48%</td>
+         <td align="right">2.25</td>
+         <td align="right">2.27%</td>
+         <td align="right">2.50</td>
+         <td align="right">1.48%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">30.04.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.daimler.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Daimler AG</a></td>
+         <td align="right">67.80</td>
+         <td align="right">3.32%</td>
+         <td align="right">2.20</td>
+         <td align="right">5.16%</td>
+         <td align="right">2.25</td>
+         <td align="right">3.19%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">01.04.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.deutsche-bank.de/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Deutsche Bank AG</a></td>
+         <td align="right">26.29</td>
+         <td align="right">2.85%</td>
+         <td align="right">0.75</td>
+         <td align="right">2.09%</td>
+         <td align="right">0.75</td>
+         <td align="right">2.47%</td>
+         <td align="center"><img src="css/graphics/equal.png" border="0" alt="equal" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">21.05.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.deutsche-boerse.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Deutsche Boerse AG</a></td>
+         <td align="right">58.75</td>
+         <td align="right">3.57%</td>
+         <td align="right">2.10</td>
+         <td align="right">4.26%</td>
+         <td align="right">2.10</td>
+         <td align="right">3.79%</td>
+         <td align="center"><img src="css/graphics/equal.png" border="0" alt="equal" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">13.05.2015</td>
+         <td align="center"><img src="css/graphics/info.png" class="tooltip" title="2012:&lt;br&gt; Dividende 2,30  + 1,00  Sonderdividende" /></td>
+        </tr>
+        <tr> 
+         <td><a href="http://konzern.lufthansa.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Deutsche Lufthansa AG</a></td>
+         <td align="right">14.36</td>
+         <td align="right">3.13%</td>
+         <td align="right">0.00</td>
+         <td align="right">0.00%</td>
+         <td align="right">0.45</td>
+         <td align="right">2.43%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">29.04.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.dp-dhl.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Deutsche Post AG</a></td>
+         <td align="right">26.71</td>
+         <td align="right">2.99%</td>
+         <td align="right">0.70</td>
+         <td align="right">3.48%</td>
+         <td align="right">0.80</td>
+         <td align="right">2.86%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">27.05.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.telekom.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Deutsche Telekom AG</a></td>
+         <td align="right">13.70</td>
+         <td align="right">3.65%</td>
+         <td align="right">0.70</td>
+         <td align="right">6.97%</td>
+         <td align="right">0.50</td>
+         <td align="right">3.81%</td>
+         <td align="center"><img src="css/graphics/down.png" border="0" alt="down" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">21.05.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.eon.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> E.ON SE </a></td>
+         <td align="right">14.26</td>
+         <td align="right">4.21%</td>
+         <td align="right">1.10</td>
+         <td align="right">7.74%</td>
+         <td align="right">0.60</td>
+         <td align="right">4.35%</td>
+         <td align="center"><img src="css/graphics/down.png" border="0" alt="down" /></td>
+         <td align="right" class="marker">0.50</td>
+         <td align="right">3.51%</td>
+         <td align="right">07.05.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.fmc-ag.de/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Fresenius M.C. AG &amp; Co. KGaA St</a></td>
+         <td align="right">59.39</td>
+         <td align="right">1.30%</td>
+         <td align="right">0.75</td>
+         <td align="right">1.42%</td>
+         <td align="right">0.77</td>
+         <td align="right">1.60%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">19.05.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.fresenius.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Fresenius SE &amp; Co. KGaA</a></td>
+         <td align="right">43.59</td>
+         <td align="right">0.96%</td>
+         <td align="right">1.10</td>
+         <td align="right">1.14%</td>
+         <td align="right">1.25</td>
+         <td align="right">1.13%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">20.05.2015</td>
+         <td align="center"><img src="css/graphics/info.png" class="tooltip" title="2014:&lt;br&gt; Aktiensplit im Verh&auml;ltnis 1:3 am 04.08.2014" /></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.heidelbergcement.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> HeidelbergCement AG</a></td>
+         <td align="right">60.97</td>
+         <td align="right">0.98%</td>
+         <td align="right">0.47</td>
+         <td align="right">0.82%</td>
+         <td align="right">0.60</td>
+         <td align="right">0.98%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">07.05.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.henkel.de/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Henkel AG &amp; Co. KGaA Vz</a></td>
+         <td align="right">89.22</td>
+         <td align="right">1.37%</td>
+         <td align="right">0.95</td>
+         <td align="right">1.30%</td>
+         <td align="right">1.22</td>
+         <td align="right">1.55%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">13.04.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.infineon.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Infineon Technologies AG</a></td>
+         <td align="right">7.88</td>
+         <td align="right">1.52%</td>
+         <td align="right">0.12</td>
+         <td align="right">1.83%</td>
+         <td align="right">0.12</td>
+         <td align="right">1.55%</td>
+         <td align="center"><img src="css/graphics/equal.png" border="0" alt="equal" /></td>
+         <td align="right" class="marker">0.18</td>
+         <td align="right">2.28%</td>
+         <td align="right">12.02.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.k-plus-s.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> K+S AG</a></td>
+         <td align="right">24.14</td>
+         <td align="right">1.04%</td>
+         <td align="right">1.40</td>
+         <td align="right">4.05%</td>
+         <td align="right">0.25</td>
+         <td align="right">0.94%</td>
+         <td align="center"><img src="css/graphics/down.png" border="0" alt="down" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">12.05.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.lanxess.de/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> LANXESS AG</a></td>
+         <td align="right">39.94</td>
+         <td align="right">1.25%</td>
+         <td align="right">1.00</td>
+         <td align="right">1.74%</td>
+         <td align="right">0.50</td>
+         <td align="right">0.98%</td>
+         <td align="center"><img src="css/graphics/down.png" border="0" alt="down" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">13.05.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.the-linde-group.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Linde AG</a></td>
+         <td align="right">151.75</td>
+         <td align="right">1.98%</td>
+         <td align="right">2.70</td>
+         <td align="right">1.77%</td>
+         <td align="right">3.00</td>
+         <td align="right">1.94%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">12.05.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.merckgroup.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Merck KGaA</a></td>
+         <td align="right">80.08</td>
+         <td align="right">1.19%</td>
+         <td align="right">1.70</td>
+         <td align="right">1.46%</td>
+         <td align="right">1.90</td>
+         <td align="right">1.55%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">17.04.2015</td>
+         <td align="center"><img src="css/graphics/info.png" class="tooltip" title="2014:&lt;br&gt; Aktiensplit im Verh&auml;ltnis 1:2 am 30.06.2014" /></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.munichre.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Muenchener Rueck AG</a></td>
+         <td align="right">165.65</td>
+         <td align="right">4.38%</td>
+         <td align="right">7.00</td>
+         <td align="right">4.41%</td>
+         <td align="right">7.25</td>
+         <td align="right">4.36%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">23.04.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.rwe.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> RWE AG St</a></td>
+         <td align="right">29.13</td>
+         <td align="right">3.43%</td>
+         <td align="right">2.00</td>
+         <td align="right">7.02%</td>
+         <td align="right">1.00</td>
+         <td align="right">3.48%</td>
+         <td align="center"><img src="css/graphics/down.png" border="0" alt="down" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">23.04.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.sap.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> SAP AG</a></td>
+         <td align="right">56.68</td>
+         <td align="right">1.76%</td>
+         <td align="right">0.85</td>
+         <td align="right">1.45%</td>
+         <td align="right">1.00</td>
+         <td align="right">1.80%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">20.05.2015</td>
+         <td align="center"><img src="css/graphics/info.png" class="tooltip" title="2012:&lt;br&gt; Dividende 0,75  + 0,35  Sonderdividende  " /></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.siemens.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Siemens AG</a></td>
+         <td align="right">95.16</td>
+         <td align="right">3.15%</td>
+         <td align="right">3.00</td>
+         <td align="right">3.59%</td>
+         <td align="right">3.00</td>
+         <td align="right">3.03%</td>
+         <td align="center"><img src="css/graphics/equal.png" border="0" alt="equal" /></td>
+         <td align="right" class="marker">3.30</td>
+         <td align="right">3.47%</td>
+         <td align="right">27.01.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.thyssenkrupp.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> ThyssenKrupp AG</a></td>
+         <td align="right">21.27</td>
+         <td align="right">0.00%</td>
+         <td align="right">0.00</td>
+         <td align="right">0.00%</td>
+         <td align="right">0.00</td>
+         <td align="right">0.00%</td>
+         <td align="center"><img src="css/graphics/no.png" border="0" alt="no" /></td>
+         <td align="right" class="marker">0.11</td>
+         <td align="right">0.52%</td>
+         <td align="right">30.01.2015</td>
+         <td align="center"></td>
+        </tr>
+        <tr> 
+         <td><a href="http://www.volkswagenag.com/" target="_blank"><img src="css/graphics/link.png" border="0" alt="Link" /> Volkswagen AG Vz</a></td>
+         <td align="right">185.20</td>
+         <td align="right">2.19%</td>
+         <td align="right">3.56</td>
+         <td align="right">2.33%</td>
+         <td align="right">4.06</td>
+         <td align="right">2.12%</td>
+         <td align="center"><img src="css/graphics/up.png" border="0" alt="up" /></td>
+         <td align="right" class="marker"></td>
+         <td align="right"> </td>
+         <td align="right">05.05.2015</td>
+         <td align="center"></td>
+        </tr>
+       </tbody>
+      </table> Alle Angaben ohne Gew&auml;hr. 
+      <br /> 
+      <br /> 
+      <script type="text/javascript" src="http://imagesrv.adition.com/js/adition.js"></script> 
+      <script type="text/javascript" src="http://ad4.adfarm1.adition.com/js?wp_id=2559163"></script> 
+      <h2>Legende<a name="Legende" id="Legende">&nbsp;</a></h2> 
+      <b>Ren:</b> Dividendenrendite im Bezug auf die letzte ausgezahlte Dividende zum aktuellen Kurs
+      <br />
+      <b>Div13:</b> Ausgesch&uuml;ttete Dividende im Kalenderjahr 2013 in &#x20ac;
+      <br />
+      <b>Ren13:</b> Dividendenrendite im Bezug auf die ausgezahlte Dividende zum Kurs an der Hauptversammlung im Kalenderjahr 2013
+      <br />
+      <b>Div14:</b> Ausgesch&uuml;ttete Dividende im Kalenderjahr 2014 in &#x20ac;
+      <br />
+      <b>Ren14:</b> Dividendenrendite im Bezug auf die ausgezahlte Dividende zum Kurs an der Hauptversammlung im Kalenderjahr 2014
+      <br />
+      <b>Tendenz:</b> Vergleich zwischen letzte ausgezahlte Dividende (ohne Sonder- oder Bonusdividende) und Dividende aus dem Vorjahr
+      <br />
+      <b>eDiv:</b> Erwartete Dividende in &#x20ac;
+      <br />
+      <b>eRen:</b> Dividendenrendite im Bezug auf die erwartete Dividende zum aktuellen Kurs
+      <br />
+      <b>eHV:</b> Erwarteter Termin der n&auml;chsten Hauptversammlung
+      <br /> 
+      <br /> 
+      <br /> 
+      <br /> 
+     </div> 
+     <div class="col col-2-2-2"> 
+      <br /> 
+      <br /> 
+      <br /> 
+      <br /> 
+      <br /> 
+      <br /> 
+      <br /> 
+      <script type="text/javascript" src="http://imagesrv.adition.com/js/adition.js"></script> 
+      <script type="text/javascript" src="http://ad4.adfarm1.adition.com/js?wp_id=2559155"></script> 
+      <br /> 
+      <br /> 
+      <script type="text/javascript"><!--
+google_ad_client = "ca-pub-2189911327907144";
+/* Dividendenchecker - Links */
+google_ad_slot = "4266313207";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script> 
+      <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+      <br /> 
+      <br /> 
+      <script type="text/javascript"><!--
+google_ad_client = "pub-2189911327907144";
+/* 160x600, Erstellt 09.12.08 */
+google_ad_slot = "5557277246";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script> 
+      <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+     </div> 
+    </div> 
+    <div class="content-line"></div> 
+   </div> 
+   <div class="footer"> 
+    <div class="main_size"> 
+     <div class="footer_content">
+       &copy; Dividendenchecker 2009 - 2014&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="/impressum.php"><img src="/css/graphics/link.png" border="0" alt="Link" /> Impressum</a> 
+     </div> 
+    </div> 
+   </div> 
+  </div>  
+ </body>
+</html>
