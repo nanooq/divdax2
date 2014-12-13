@@ -2,15 +2,13 @@ package layer3;
 
 import java.util.ArrayList;
 
-import layer3.Data.DT;
-
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class Sources_DivChe {
+public class Source_DivChe extends Source {
 	
-	public static final ArrayList<String> SOURCES = Sources_DivChe.initSources();
+	public static final ArrayList<String> SOURCES = Source_DivChe.initSources();
 	
 	private static ArrayList<String> initSources() {
 		ArrayList<String> sources = new ArrayList<String>();
@@ -22,8 +20,9 @@ public class Sources_DivChe {
 		return sources;
 	}
 	
-	public static ArrayList<Stock> extractStocks(Document inDocument) {
+	public ArrayList<Stock> extractStocks(Document inDocument) {
 		ArrayList<Stock> rows = new ArrayList<Stock>();
+		System.();
 		Element aTable = inDocument.getElementById("table-dax");
 		Elements tableRows = aTable.getElementsByTag("tr");
 		for (Element aRow : tableRows) {

@@ -51,6 +51,17 @@ public class Layer3 {
 	 * @return
 	 * @throws IOException
 	 */
+	public static SourceDocument readDocument(File inFile, String inStrBaseURI,
+			Source inSource) throws IOException {
+		Document readDocument = null;
+		if (Layer2.exists(inFile)) {
+			readDocument = Layer2.parse(inFile, inStrBaseURI);
+		} else {
+			throw new FileNotFoundException();
+		}
+		return new SourceDocument(readDocument, inSource);
+	}
+	
 	public static Document readDocument(File inFile, String inStrBaseURI) throws IOException {
 		Document readDocument = null;
 		if (Layer2.exists(inFile)) {
@@ -68,10 +79,15 @@ public class Layer3 {
 	 * @return
 	 * @throws IOException
 	 */
-	public static Document readDocument(String inStrURL, File inFile) throws IOException {
+	public static SourceDocument readDocument(String inStrURL, File inFile, Source inSource) throws IOException {
+		Document readDocument = Layer3.readDocument(inStrURL, inFile);
+		return new SourceDocument(readDocument, inSource);
+	}
+	
+	private static Document readDocument(String inStrURL, File inFile) throws IOException {
 		Document readDocument = null;
 		readDocument = Layer2.read(inStrURL);
-		System.out.println(Layer2.write(inFile, readDocument));
+		Layer2.write(inFile, readDocument);
 		return readDocument;
 	}
 

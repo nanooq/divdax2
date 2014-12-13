@@ -2,11 +2,6 @@ package layer3;
 
 public class Data {
 	
-	public enum DT {
-		AN, STR, STRX, FLT, DATE
-	}
-
-	
 	private DT type = null;
 	private String value = null;
 
@@ -22,14 +17,13 @@ public class Data {
 	public String formatValue(DT inDT, String inValue) {
 		if (inValue == null
 				|| inValue.isEmpty()) {
-			inValue = "";
-			throw new NullPointerException();
+			inValue = null;
 		} else {
 			switch (inDT) {
 			// Alphanumeric
 			case AN : inValue = inValue.replaceAll("[^a-zA-Z0-9]", "");
 			// Alphanumeric and ; . ,
-			case STRX : inValue = inValue.replaceAll("[^a-zA-Z0-9 :.,]", "");
+			case STRX : inValue = inValue.replaceAll("[^a-zA-Z0-9:.,]", "");
 				break;
 			case DATE : inValue = Layer3.formatDate(inValue, Layer3.ddMMyyyy, Layer3.yyyyMMdd);
 				break;

@@ -1,13 +1,9 @@
-package test;
+package layer3;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-
-import layer3.Layer3;
-import layer3.StockAttribute;
-import layer3.Stock;
 
 /**
  * A StockManager only holds filenames to stock files, which it is suppose to manage.
@@ -18,6 +14,8 @@ import layer3.Stock;
 public class StockManager {
 	
 	public static String LOCATION = "test.stockmanager.deleteme";
+
+	private static int counter=0;
 	
 	private ArrayList<String> strFileStocks = null;
 
@@ -62,21 +60,34 @@ public class StockManager {
 		return null;
 	}
 
-	public void update(DayMap aDay) {
+	public boolean update(DayMap aDay) {
+		boolean isUpdated = false;
 		ArrayList<Stock> stocks = aDay.getStocks();
 		for ( Stock aStock : stocks ) {
-			this.update(aStock);
+			isUpdated = this.update(aStock);
 		}
+		return isUpdated;
 	}
 
 	private boolean update(Stock inStock) {
 		boolean isUpdated = false;
-		String strFileStock = inStock.get(StockAttribute.strFile).getValue();
+		String strFileStock = this.getStrFileStock(inStock);
+		System.out.println(inStock);
 		if (this.getStrFileStocks().contains(strFileStock)) {
 			Stock savedStock = this.readFromFile(strFileStock);
 			isUpdated = savedStock.update(inStock);
-		}
+		} 
 		return isUpdated;
+	}
+
+	private String getStrFileStock(Stock inStock) {
+		String strFileStock = null;
+		try {
+			strFileStock = inStock.get(StockAttribute.strFile).getValue();						
+		} catch (NullPointerException e) {
+			strFileStock="file" + (++StockManager.counter);
+		}
+		return strFileStock;
 	}
 
 	private Stock readFromFile(String inStrFileStock) {

@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Set;
 
 import layer2.CSV;
-import layer3.Data.DT;
 
 /**
  * This class represents a stock.
@@ -86,11 +85,12 @@ public class Stock {
 
 	public static Stock createFrom(ArrayList<String> inCSVStrings) {
 		//TODO
+		System.out.println("PANIK");
 		return null;
 	}
 
 	public boolean update(Stock inStock) {
-		// TODO Auto-generated method stub
+		System.out.println("HELLO" + inStock);
 		return false;
 	}
 }

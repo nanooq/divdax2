@@ -6,7 +6,11 @@ import java.io.File;
 import java.io.IOException;
 
 import layer2.Layer2;
+import layer3.DayMap;
 import layer3.Layer3;
+import layer3.SourceDocument;
+import layer3.Source_DivChe;
+import layer3.StockManager;
 
 import org.jsoup.nodes.Document;
 import org.junit.Test;
@@ -25,18 +29,19 @@ public class TestHTMLDayMap {
 	@Test
 	public void testReadHTML() {
 		// Load HTML and turn it to document
-		Document aDocument = null;
+		SourceDocument aSourceDocument = null;
 		try {
-			if (Layer2.isOnline()) {
-				aDocument = Layer3.readDocument(URL, FILE);
+			if (false /*Layer2.isOnline()*/) {
+				aSourceDocument = Layer3.readDocument(URL, FILE, new Source_DivChe());
 			} else {
-				aDocument = Layer3.readDocument(FILE, BASEURI);
+				aSourceDocument = Layer3.readDocument(FILE, BASEURI, new Source_DivChe());
 			}			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 		// Turn document into stockDayMap
-		DayMap aDay = new DayMap(aDocument);
+		DayMap aDay = new DayMap(aSourceDocument);
 		assertNotNull(aDay);
 		
 		// Feed DayMap into StockManager
@@ -47,6 +52,10 @@ public class TestHTMLDayMap {
 			e.printStackTrace();
 		}
 		assertNotNull(aStockManager);
-		aStockManager.update(aDay);
+		
+		boolean isUpdated = false;
+		assertFalse(isUpdated);
+		isUpdated = aStockManager.update(aDay);
+		assertTrue(isUpdated);
 	}
 }
